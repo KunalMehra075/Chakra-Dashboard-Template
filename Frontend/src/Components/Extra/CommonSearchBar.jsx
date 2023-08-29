@@ -8,8 +8,9 @@ import {
 } from "@chakra-ui/react";
 
 import axios from "axios";
-import { BASE_URL } from "../../utils/config";
+
 import { FiXCircle } from "react-icons/fi";
+import { BASE_URL } from "../../utils/BaseURL";
 
 const ReusableSearchBar = ({
   searchUrl,

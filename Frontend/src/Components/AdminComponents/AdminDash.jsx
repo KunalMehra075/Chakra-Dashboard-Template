@@ -12,7 +12,7 @@ import { PieChart } from "../Extra/PieChart";
 import IndianNumberSystem from "../../utils/IndianNumberSystem";
 
 import axios from "axios";
-import { BASE_URL } from "../../utils/config";
+import { BASE_URL } from "../../utils/BaseURL";
 
 const AdminDash = () => {
   const [DashDetails, setDashDetails] = useState({});
@@ -58,13 +58,13 @@ const AdminDash = () => {
     ],
   };
 
-  const getData = () => {
-    axios
-      .get(`${BASE_URL}/api/test/get-dashboard-details`)
-      .then((res) => setDashDetails(res?.data));
-  };
+  // const getData = () => {
+  //   axios
+  //     .get(`${BASE_URL}/api/test/get-dashboard-details`)
+  //     .then((res) => setDashDetails(res?.data));
+  // };
   useEffect(() => {
-    getData();
+    // getData();
   }, []);
 
   return (
@@ -78,12 +78,12 @@ const AdminDash = () => {
         Dashboard
       </Text>
 
-      <Flex width="99%" my={3} flexWrap={"wrap"} gap={2}>
+      {/* <Flex width="99%" my={3} flexWrap={"wrap"} gap={2}>
         {carddata1.map((item) => {
           return <AdminCards key={item.head} head={item.head} num={item.num} />;
         })}
-      </Flex>
-
+      </Flex> */}
+      {/* 
       <Flex gap={2} direction={{ base: "column", md: "row" }}>
         <Grid templateColumns={"repeat(2,1fr)"} width={"70%"}>
           {carddata2.map((item) => {
@@ -92,7 +92,7 @@ const AdminDash = () => {
             );
           })}
         </Grid>
-        {/**<!--*------- <Pie Chart> ----------->*/}
+      
         <Card
           p={5}
           my={1}
@@ -106,7 +106,7 @@ const AdminDash = () => {
             (State-wise)
           </Text>
         </Card>
-      </Flex>
+      </Flex> */}
     </>
   );
 };

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Button, Flex, Input, Box } from "@chakra-ui/react";
 
 import axios from "axios";
-import { BASE_URL } from "../../utils/config";
+import { BASE_URL } from "../../utils/BaseURL";
 
 const SearchBarComponent = ({ setMarkuser }) => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -37,7 +37,7 @@ const SearchBarComponent = ({ setMarkuser }) => {
   const HandleSelectuser = (user) => {
     setFilteredEntity([]);
     setSearchBar(
-      `${user.first_name} ${user.last_name} - whizcode: ${user.whiz_code}`
+      `${user.first_name} ${user.last_name} - whizcode: ${user.user_code}`
     );
     setMarkuser(user);
   };
@@ -88,7 +88,7 @@ const SearchBarComponent = ({ setMarkuser }) => {
                   {user.first_name} {user.last_name}
                 </Box>
                 <Box display={"inline-block"} style={{ width: "150px" }}>
-                  - {user.whiz_code}
+                  - {user.user_code}
                 </Box>
                 <Box display={"inline-block"} style={{ width: "300px" }}>
                   - {user.email}

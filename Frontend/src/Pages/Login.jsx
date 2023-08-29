@@ -16,7 +16,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../assets/Icons/company.jpg";
 import { loginAdmin } from "../Redux/Auth/Auth.action";
-import { theme1 } from "../utils/colours";
+
 import pattern from "../assets/pattern.jpg";
 
 export default function Login() {
@@ -97,7 +97,7 @@ export default function Login() {
                 <Checkbox>Remember me</Checkbox>
               </Stack>
               <Button
-                bg={theme1}
+                bg={"red.500"}
                 color={"white"}
                 variant={"solid"}
                 type="submit"

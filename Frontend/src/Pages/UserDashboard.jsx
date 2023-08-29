@@ -49,7 +49,7 @@ import {
   FiMeh,
 } from "react-icons/fi";
 import { useDispatch } from "react-redux";
-import { theme2 } from "../utils/colours";
+
 import UserRoutes from "../Routes/UserRoutes";
 
 export default function SideNav() {
@@ -166,12 +166,12 @@ const NavItem = ({ icon, children, path, Active, setActive, ...rest }) => {
         borderRadius="5px"
         role="group"
         cursor="pointer"
-        bg={path == Active ? theme2 : "white"}
+        bg={path == Active ? "green.400" : "white"}
         color={path == Active ? "white" : "black"}
         fontWeight={path == Active ? "600" : "400"}
         onClick={() => setActive(path)}
         _hover={{
-          bg: theme2,
+          bg: "green.400",
           color: "white",
         }}
         {...rest}

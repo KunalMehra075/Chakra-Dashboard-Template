@@ -8,13 +8,8 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import facebook from "../../assets/Icons/facebook.png";
-import insta from "../../assets/Icons/insta.png";
-import twitter from "../../assets/Icons/twitter.png";
-import youtube from "../../assets/Icons/youtube.png";
-import linkedin from "../../assets/Icons/linkedin.png";
-import logo from "../../assets/Icons/company.jpg";
 
+import logo from "../../assets/Icons/company.jpg";
 import { MdLocalPhone, MdLocationOn, MdEmail } from "react-icons/md";
 
 export default function Footer() {
@@ -92,26 +87,26 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Image width="30px" src={facebook} />
+                {/* <Image width="30px" src={facebook} /> */}
               </a>
               <a
-                href="https://www.instagram.com/whiz_guru_user"
+                href="https://www.instagram.com/ _user"
                 target="_blank"
                 rel="noreferrer"
               >
-                <Image width="30px" src={insta} />
+                {/* <Image width="30px" src={insta} /> */}
               </a>
 
               <a href="" target="_blank" rel="noreferrer">
-                <Image width="30px" src={youtube} />
+                {/* <Image width="30px" src={youtube} /> */}
               </a>
 
               <a
-                href="https://twitter.com/whiz_guru_user"
+                href="https://twitter.com/ _user"
                 target="_blank"
                 rel="noreferrer"
               >
-                <Image width="30px" src={twitter} />
+                {/* <Image width="30px" src={twitter} /> */}
               </a>
 
               <a
@@ -119,7 +114,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Image width="30px" src={linkedin} />
+                {/* <Image width="30px" src={linkedin} /> */}
               </a>
             </HStack>
           </Stack>

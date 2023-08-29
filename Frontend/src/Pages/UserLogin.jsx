@@ -16,7 +16,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../assets/Icons/company.jpg";
 import { loginUser } from "../Redux/Auth/Auth.action";
-import { theme2 } from "../utils/colours";
+
 import pattern from "../assets/pattern.jpg";
 
 export default function Login() {
@@ -103,7 +103,7 @@ export default function Login() {
                 </Link>
               </Stack>
               <Button
-                bg={theme2}
+                bg={"green.400"}
                 color={"white"}
                 variant={"solid"}
                 type="submit"

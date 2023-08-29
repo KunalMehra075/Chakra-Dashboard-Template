@@ -1,5 +1,5 @@
 import AllRoutes from "./Routes/AllRoutes";
-import WhatsAppWidget from "react-whatsapp-chat-widget";
+// import WhatsAppWidget from "react-whatsapp-chat-widget";
 import "react-whatsapp-chat-widget/index.css";
 import "./App.css";
 
@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <AllRoutes />
-      <WhatsAppWidget
+      {/* <WhatsAppWidget
         phoneNo="+918369563412"
         position="right"
         widgetWidth="300px"
@@ -38,7 +38,7 @@ function App() {
         btnBgColor="#fff"
         btnTxt="Start Chat"
         btnTxtColor="#38903c"
-      />
+      /> */}
     </>
   );
 }

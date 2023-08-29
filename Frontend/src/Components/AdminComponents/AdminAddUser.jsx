@@ -20,10 +20,11 @@ import {
 } from "@chakra-ui/react";
 import { postUser } from "../../Redux/App/Action/User.action";
 import { FiPlusCircle } from "react-icons/fi";
-import { BASE_URL } from "../../utils/config";
+
 import { AddIcon, CheckIcon } from "@chakra-ui/icons";
 import axios from "axios";
 import getFormattedDate from "../../utils/CurrentDate";
+import { BASE_URL } from "../../utils/BaseURL";
 
 const initial = {
   email: "",

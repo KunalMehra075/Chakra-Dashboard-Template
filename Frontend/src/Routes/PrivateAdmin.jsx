@@ -10,7 +10,7 @@ const PrivateAdminRoute = ({ children }) => {
 
   useEffect(() => {
     if (!isAuth && !UserDetail && !token) {
-      navigate("/user-login");
+      navigate("/admin-login");
     }
   }, [isAuth]);
 

@@ -21,7 +21,7 @@ import Pie from "../Extra/ProfileCircle";
 
 import { BsFillCheckCircleFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
-import calculateCompletionPercentage from "../../utils/PercentageProfile";
+
 import { useDispatch, useSelector } from "react-redux";
 
 const UserDash = () => {
@@ -92,7 +92,7 @@ const UserDash = () => {
                 height={40}
               >
                 <Heading mx={"auto"} size={"3xl"}>
-                  {Streaks?.length || <Spinner></Spinner>}
+                  {Streaks?.length || 5 || <Spinner></Spinner>}
                 </Heading>
                 <AbsoluteCenter
                   left={4}
@@ -120,16 +120,13 @@ const UserDash = () => {
           justifyContent={"center"}
           onClick={() => navigate("/user/settings")}
         >
-          <Pie
-            percentage={calculateCompletionPercentage(MainUser)}
-            colour="#2bb341"
-          />
+          <Pie percentage={90} colour="#2bb341" />
           <Text fontSize={"1.2rem"} fontWeight={"600"}>
             Your Profile Completeness
           </Text>
         </Card>
       </Flex>
-      <Flex gap={2} direction={{ base: "column", md: "row" }}>
+      {/* <Flex gap={2} direction={{ base: "column", md: "row" }}>
         <Card width={{ base: "100%", md: "100%" }} textAlign={"left"}>
           <Heading fontSize={"1.1rem"} mx={5} my={5}>
             Assigned Students
@@ -164,7 +161,7 @@ const UserDash = () => {
 
                   <Th sx={cellStyle}>Class Status</Th>
 
-                  {/* <Th sx={headCellStyle}>Actions</Th> */}
+                 
                 </Tr>
               </Thead>
               <Tbody>
@@ -176,7 +173,7 @@ const UserDash = () => {
                         <Td sx={cellStyle}>{index + page * 10 - 9}</Td>
 
                         <Td sx={cellStyle}>
-                          <>{item?.whiz_code}</>
+                          <>{item?.user_code}</>
                         </Td>
 
                         <Td style={{ ...cellStyle }}>
@@ -185,7 +182,7 @@ const UserDash = () => {
                           </b>{" "}
                           <br />
                           <p style={{ fontSize: "13px" }}>
-                            {student?.whiz_code}
+                            {student?.user_code}
                           </p>
                         </Td>
                         <Td sx={cellStyle}>{item?.streak_subject}</Td>
@@ -238,13 +235,13 @@ const UserDash = () => {
           </TableContainer>
         </Card>
 
-        {/* <Card p={5} gap={2} width={{ base: "100%", md: "25%" }}>
+         <Card p={5} gap={2} width={{ base: "100%", md: "25%" }}>
           <PieChart style={{ maxWidth: "300px" }} data={Piedata} />
         </Card>
         <Card p={5} width={{ base: "100%", md: "46%" }}>
           <BarChart options={Baroptions} data={Bardata} />
-        </Card> */}
-      </Flex>
+        </Card> 
+      </Flex> */}
     </>
   );
 };

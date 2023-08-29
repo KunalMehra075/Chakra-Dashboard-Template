@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Select } from "@chakra-ui/react";
 
 import axios from "axios";
-import { BASE_URL } from "../../utils/config";
+import { BASE_URL } from "../../utils/BaseURL";
 
 const ReusableSelectBar = ({
   searchUrl,

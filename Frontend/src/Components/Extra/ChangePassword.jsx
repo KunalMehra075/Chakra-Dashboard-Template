@@ -11,7 +11,7 @@ import {
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { BASE_URL } from "../../utils/config";
+import { BASE_URL } from "../../utils/BaseURL";
 
 const ChangePassword = () => {
   const toast = useToast();

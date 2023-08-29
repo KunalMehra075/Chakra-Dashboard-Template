@@ -1,10 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  Route,
-  Link as RouteLink,
-  Routes,
-  useNavigate,
-} from "react-router-dom";
+import { Link as RouteLink, useNavigate } from "react-router-dom";
 import logo_light from "../assets/Icons/company.jpg";
 import avatar from "../assets/Icons/avatar.png";
 import {
@@ -30,36 +25,22 @@ import {
   Image,
   useToast,
   Tag,
-  Heading,
-  Spinner,
-  Button,
 } from "@chakra-ui/react";
 import {
   FiUser,
   FiHome,
-  FiTruck,
-  FiBriefcase,
-  FiPackage,
   FiMenu,
-  FiBell,
   FiUsers,
-  FiChevronDown,
-  FiGitBranch,
   FiFileText,
-  FiSend,
   FiSettings,
-  FiTerminal,
   FiMeh,
-  FiUpload,
-  FiCompass,
-  FiLogOut,
 } from "react-icons/fi";
-import { useDispatch, useSelector } from "react-redux";
-import { theme1 } from "../utils/colours";
+import { useDispatch } from "react-redux";
+
 import AdminRoutes from "../Routes/AdminRoutes";
 import IndianNumberSystem from "../utils/IndianNumberSystem";
 import axios from "axios";
-import { BASE_URL } from "../utils/config";
+import { BASE_URL } from "../utils/BaseURL";
 
 export default function SideNav() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -195,12 +176,12 @@ const NavItem = ({ icon, children, path, Active, setActive, ...rest }) => {
         borderRadius="5px"
         role="group"
         cursor="pointer"
-        bg={path == Active ? theme1 : "white"}
+        bg={path == Active ? "red.500" : "white"}
         color={path == Active ? "white" : "black"}
         fontWeight={path == Active ? "600" : "400"}
         onClick={() => setActive(path)}
         _hover={{
-          bg: theme1,
+          bg: "red.500",
           color: "white",
         }}
         {...rest}

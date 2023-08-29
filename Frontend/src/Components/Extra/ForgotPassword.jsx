@@ -12,7 +12,7 @@ import {
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { BASE_URL } from "../../utils/config";
+import { BASE_URL } from "../../utils/BaseURL";
 
 const ForgotPassword = () => {
   const toast = useToast();
@@ -20,29 +20,9 @@ const ForgotPassword = () => {
 
   const emailref = useRef();
 
-  //   const newPassInput = useRef();
-  //   const confirmPassInput = useRef();
-
   const changePassHandler = (event) => {
     event.preventDefault();
-    // const enteredOldPass = oldPassInput.current.value;
-    // // const enteredNewPass = newPassInput.current.value;
-    // // const enteredConfirmPass = confirmPassInput.current.value;
-    // if (enteredNewPass !== enteredConfirmPass) {
-    //   return toast({
-    //     status: "error",
-    //     title: "Passwords do not Match",
-    //   });
-    // } else if (enteredOldPass === enteredNewPass) {
-    //   return toast({
-    //     status: "error",
-    //     title: "Old & New Password cannot be same.",
-    //   });
-    // }
 
-    // let body = {
-    //   email: JSON.parse(localStorage.getItem("user_detail_userapp"))?.email,
-    // };
     let body = {
       email: emailref.current.value,
     };

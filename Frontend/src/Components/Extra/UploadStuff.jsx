@@ -19,7 +19,7 @@ import {
 } from "@chakra-ui/react";
 import { AddIcon, CheckIcon } from "@chakra-ui/icons";
 import { FiCopy } from "react-icons/fi";
-import { BASE_URL } from "../../utils/config";
+import { BASE_URL } from "../../utils/BaseURL";
 
 const UploadStuff = () => {
   const toast = useToast();

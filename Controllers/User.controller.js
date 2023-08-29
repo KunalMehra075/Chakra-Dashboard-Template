@@ -57,20 +57,7 @@ exports.addUser = async (req, res) => {
             if (err) return res.status(500).send({ msg: "Something Went Wrong", Err: "Bcrypt Error" })
             const address = new AddressModel(payload?.address)
             await address.save()
-            let AllUsers = await UserModel.find().select({ whiz_code: 1 })
-            let wcode = null
 
-            let lastNum = 1;
-            AllUsers.forEach((el) => {
-                let x = el?.whiz_code?.split("/")[2];
-                if (+lastNum <= x) lastNum = +x + 1;
-            });
-            const year = new Date().getFullYear();
-            wcode = `WHIZ-M/${String(year).slice(2)}-${String(year + 1).slice(
-                2
-            )}/${lastNum}`;
-
-            payload.whiz_code = wcode
             payload.address = address._id
             payload.password = hash
             const instance = new UserModel(payload)

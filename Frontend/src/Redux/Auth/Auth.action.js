@@ -1,7 +1,8 @@
 
 import axios from "axios";
 import * as types from "./Auth.types";
-import { BASE_URL } from "../../utils/config";
+import { BASE_URL } from "../../utils/BaseURL";
+
 
 export const loginAdmin = (payload, navigate, toast) => (dispatch) => {
     dispatch({ type: types.USER_AUTH_LOGIN_LOADING });

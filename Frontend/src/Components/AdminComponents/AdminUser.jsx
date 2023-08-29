@@ -156,8 +156,8 @@ const AdminUser = () => {
       >
         <ReusableSearchBar
           searchUrl={"user/search-user"}
-          datatype={"whiz_code"}
-          placeholder={"Search by Whiz Code"}
+          datatype={"user_code"}
+          placeholder={"Search by Code"}
           Entities={"Users"}
           setData={setAllUsers}
           getData={getData}
@@ -259,7 +259,7 @@ const AdminUser = () => {
                   <Tr key={item._id + "ab"}>
                     <Td sx={cellStyle}>{index + page * 10 - 9}</Td>
 
-                    <Td sx={cellStyle}>{item?.whiz_code}</Td>
+                    <Td sx={cellStyle}>{item?.user_code}</Td>
                     <Td
                       style={{
                         ...cellStyle,

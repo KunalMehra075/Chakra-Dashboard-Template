@@ -1,4 +1,4 @@
-import logo from "../../assets/Icons/company.jpg";
+import logo from "../../assets/logo.jpg";
 import {
   Box,
   Flex,
@@ -64,19 +64,11 @@ export default function Header() {
             <BsFacebook />
           </a>
 
-          <a
-            href="https://www.instagram.com/whiz_guru_user"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
             <BsInstagram />
           </a>
 
-          <a
-            href="https://twitter.com/whiz_guru_user"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href="https://twitter.com" target="_blank" rel="noreferrer">
             <BsTwitter />
           </a>
 
@@ -188,7 +180,7 @@ export default function Header() {
                   </a>
 
                   <a
-                    href="https://www.instagram.com/whiz_guru_user"
+                    href="https://www.instagram.com"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -196,7 +188,7 @@ export default function Header() {
                   </a>
 
                   <a
-                    href="https://twitter.com/whiz_guru_user"
+                    href="https://twitter.com"
                     target="_blank"
                     rel="noreferrer"
                   >

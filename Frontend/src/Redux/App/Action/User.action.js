@@ -1,7 +1,8 @@
 
 import axios from "axios";
 import * as UserTypes from "../Types/User.types";
-import { BASE_URL } from "../../../utils/config";
+import { BASE_URL } from "../../../utils/BaseURL";
+
 
 
 export const getUsers = (page, setAllUsers) => (dispatch) => {
