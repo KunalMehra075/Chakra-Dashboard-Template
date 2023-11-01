@@ -3,7 +3,7 @@ import * as types from "./Auth.types";
 const UserInitState = {
     token: JSON.parse(localStorage.getItem("admin_login_token")),
     isAuth: JSON.parse(localStorage.getItem("admin_login_token")) ? true : false,
-    User_detail: JSON.parse(localStorage.getItem("User_detail")) || null,
+    Userdata: JSON.parse(localStorage.getItem("Userdata")) || null,
     loading: false,
     error: false,
 };
@@ -27,25 +27,25 @@ export const UserAuthReducer = (state = UserInitState, { type, payload }) => {
 
         case types.USER_AUTH_LOGIN_SUCCESS: {
             localStorage.setItem("admin_login_token", JSON.stringify(payload?.token));
-            localStorage.setItem("user_detail_userapp", JSON.stringify(payload?.user));
+            localStorage.setItem("Userdata_tempapp", JSON.stringify(payload?.user));
             return {
                 ...state,
                 loading: false,
                 error: false,
                 isAuth: true,
                 token: payload?.token,
-                User_detail: payload?.user
+                Userdata: payload?.user
             };
         }
 
         case types.USER_LOGOUT: {
             localStorage.removeItem("admin_login_token");
-            localStorage.removeItem("user_detail_userapp");
+            localStorage.removeItem("Userdata_tempapp");
             return {
                 ...state,
                 isAuth: false,
                 token: null,
-                User_detail: null
+                Userdata: null
             };
         }
 

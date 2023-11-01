@@ -2,7 +2,7 @@ const { getAllUsers, addUser, AuthLogin, DeleteUserById, UpdateUserByID, searchU
 
 const UserRouter = require("express").Router();
 
-UserRouter.get("/", (req, res) => res.send({ msg: "Welcome to User Route" }));
+UserRouter.get("/", (req, res) => res.send({ message: "Welcome to User Route" }));
 
 UserRouter.get("/get-all-users", getAllUsers);
 UserRouter.post("/create-user", addUser);

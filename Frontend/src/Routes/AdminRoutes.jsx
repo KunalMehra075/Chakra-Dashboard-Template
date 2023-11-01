@@ -4,7 +4,7 @@ import AdminDash from "../Components/AdminComponents/AdminDash";
 
 import AdminUser from "../Components/AdminComponents/AdminUser";
 import AdminWebsite from "../Components/AdminComponents/AdminWebsite";
-import AdminAddUser from "../Components/AdminComponents/AdminAddUser";
+import AdminAddUser from "../Components/AdminComponents/FormComponents/AdminAddUser";
 import UploadStuff from "../Components/Extra/UploadStuff";
 
 const AdminRoutes = () => {

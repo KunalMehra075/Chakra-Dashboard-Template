@@ -18,13 +18,13 @@ import {
   Box,
   Flex,
 } from "@chakra-ui/react";
-import { postUser } from "../../Redux/App/Action/User.action";
+import { postUser } from "../../../Redux/App/Action/User.action";
 import { FiPlusCircle } from "react-icons/fi";
 
 import { AddIcon, CheckIcon } from "@chakra-ui/icons";
 import axios from "axios";
-import getFormattedDate from "../../utils/CurrentDate";
-import { BASE_URL } from "../../utils/BaseURL";
+import getFormattedDate from "../../../utils/CurrentDate";
+import { BASE_URL } from "../../../utils/BaseURL";
 
 const initial = {
   email: "",
@@ -86,7 +86,7 @@ const AdminAddUser = () => {
       .post(`${BASE_URL}/api/test/upload-to-s3`, formData)
       .then((res) => {
         const filelocation = res?.data?.fileUrl;
-        console.log(res.data.msg, "URL :", filelocation);
+        console.log(res.data.message, "URL :", filelocation);
         setIsUploaded(true);
         setfilename(file.name);
         setloading(false);

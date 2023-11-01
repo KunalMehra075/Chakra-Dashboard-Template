@@ -41,7 +41,7 @@ const ChangePassword = () => {
     let body = {
       providedPass: enteredOldPass,
       newPass: enteredConfirmPass,
-      email: JSON.parse(localStorage.getItem("user_detail_userapp"))?.email,
+      email: JSON.parse(localStorage.getItem("Userdata_tempapp"))?.email,
     };
 
     axios
@@ -64,7 +64,7 @@ const ChangePassword = () => {
         console.log(err);
         toast({
           status: "error",
-          title: err?.response?.data?.msg || "Something Went Wrong",
+          title: err?.response?.data?.message || "Something Went Wrong",
         });
       });
   };

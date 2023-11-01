@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link as RouteLink, useNavigate } from "react-router-dom";
-import logo_light from "../assets/Icons/company.jpg";
-import avatar from "../assets/Icons/avatar.png";
+
 import {
   IconButton,
   Avatar,
@@ -37,12 +36,14 @@ import {
 } from "react-icons/fi";
 import { useDispatch } from "react-redux";
 
-import AdminRoutes from "../Routes/AdminRoutes";
-import IndianNumberSystem from "../utils/IndianNumberSystem";
 import axios from "axios";
-import { BASE_URL } from "../utils/BaseURL";
+import { BASE_URL } from "../../utils/BaseURL";
+import logo_light from "../../assets/Icons/company.jpg";
+import avatar from "../../assets/Icons/avatar.png";
+import AdminRoutes from "../../Routes/AdminRoutes";
+import IndianNumberSystem from "../../utils/IndianNumberSystem";
 
-export default function SideNav() {
+export default function MainAdminDashboard() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Box minH="100vh" bg={useColorModeValue("gray.100", "gray.900")}>
@@ -63,7 +64,7 @@ export default function SideNav() {
           <SidebarContent onClose={onClose} />
         </DrawerContent>
       </Drawer>
-      {/* mobilenav */}
+      {/* Mobile Nav */}
       <MobileNav onOpen={onOpen} />
       <Box ml={{ base: 0, md: 60 }} p="4">
         <AdminRoutes />
@@ -117,34 +118,6 @@ const SidebarContent = ({ onClose, ...rest }) => {
         setActive={setActive}
       >
         <Text size={"sm"}> User</Text>
-      </NavItem>
-      <NavItem
-        key={"Student"}
-        icon={FiFileText}
-        path={"admin/student"}
-        setActive={setActive}
-        Active={Active}
-      >
-        <Text size={"sm"}> Student</Text>
-      </NavItem>
-
-      <NavItem
-        key={"Streaks"}
-        icon={FiMeh}
-        path={"admin/streaks"}
-        setActive={setActive}
-        Active={Active}
-      >
-        <Text size={"sm"}> Streaks</Text>
-      </NavItem>
-      <NavItem
-        key={"User"}
-        icon={FiUser}
-        path={"admin/user"}
-        Active={Active}
-        setActive={setActive}
-      >
-        <Text size={"sm"}>Users</Text>
       </NavItem>
 
       <NavItem
@@ -218,7 +191,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
     });
   };
 
-  const user = JSON.parse(localStorage.getItem("user_detail_userapp"));
+  const user = JSON.parse(localStorage.getItem("Userdata_tempapp"));
 
   const [DashDetails, setDashDetails] = useState({});
 

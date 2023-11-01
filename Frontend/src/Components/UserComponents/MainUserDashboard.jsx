@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from "react";
-import {
-  Route,
-  Link as RouteLink,
-  Routes,
-  useNavigate,
-} from "react-router-dom";
-import logo_light from "../assets/Icons/company.jpg";
-import avatar from "../assets/Icons/avatar.png";
+import { Link as RouteLink, useNavigate } from "react-router-dom";
+import logo_light from "../../assets/Icons/company.jpg";
+import avatar from "../../assets/Icons/avatar.png";
 import {
   IconButton,
   Avatar,
@@ -30,29 +25,12 @@ import {
   Image,
   useToast,
   Tag,
-  Heading,
 } from "@chakra-ui/react";
-import {
-  FiUser,
-  FiHome,
-  FiTruck,
-  FiBriefcase,
-  FiPackage,
-  FiMenu,
-  FiBell,
-  FiUsers,
-  FiChevronDown,
-  FiGitBranch,
-  FiFileText,
-  FiSend,
-  FiSettings,
-  FiMeh,
-} from "react-icons/fi";
+import { FiHome, FiMenu, FiUsers, FiSettings, FiMeh } from "react-icons/fi";
 import { useDispatch } from "react-redux";
+import UserRoutes from "../../Routes/UserRoutes";
 
-import UserRoutes from "../Routes/UserRoutes";
-
-export default function SideNav() {
+export default function MainUserDashboard() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Box minH="100vh" bg={useColorModeValue("gray.100", "gray.900")}>
@@ -208,7 +186,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
     });
   };
 
-  const user = JSON.parse(localStorage.getItem("user_detail_userapp"));
+  const user = JSON.parse(localStorage.getItem("Userdata_tempapp"));
 
   return (
     <Flex

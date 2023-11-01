@@ -11,9 +11,9 @@ exports.SendMailRoute = async (req, res) => {
     try {
         const html = `<h1>HELLO THIS IS A TEST EMAIL FROM SENDGRID</h1>`
         SendMail({ recipient: "kunal.86agency@gmail.com", subject: "TestEmail", template: html })
-        res.status(200).send({ msg: "Email Sent" })
+        res.status(200).send({ message: "Email Sent" })
     } catch (error) {
         console.log(error);
-        res.status(500).send({ msg: error?.message || "Server Error 500" })
+        res.status(500).send({ message: error?.message || "Server Error 500" })
     }
 }

@@ -6,7 +6,6 @@ import { BASE_URL } from "../../utils/BaseURL";
 
 export const loginAdmin = (payload, navigate, toast) => (dispatch) => {
     dispatch({ type: types.USER_AUTH_LOGIN_LOADING });
-
     axios
         .post(`${BASE_URL}/api/user/admin-login`, payload)
         .then((res) => {
@@ -24,14 +23,14 @@ export const loginAdmin = (payload, navigate, toast) => (dispatch) => {
             console.log(err);
             toast({
                 title: "Login Failed!",
-                description: err?.response?.data?.msg,
+                description: err?.response?.data?.message || "Something went wrong",
                 status: "error",
                 duration: 4000,
                 isClosable: true,
             });
             dispatch({
                 type: types.USER_AUTH_LOGIN_ERROR,
-                payload: err?.response?.data?.msg,
+                payload: err?.response?.data?.message || "Something went wrong",
             });
         });
 };
@@ -55,14 +54,14 @@ export const loginUser = (payload, navigate, toast) => (dispatch) => {
             console.log(res);
             toast({
                 title: "Login Failed!",
-                description: res?.response?.data?.msg || "Something went wrong",
+                description: res?.response?.data?.message || "Something went wrong",
                 status: res?.response?.data?.status || "error",
                 duration: 4000,
                 isClosable: true,
             });
             dispatch({
                 type: types.USER_AUTH_LOGIN_ERROR,
-                payload: res?.response?.data?.msg,
+                payload: res?.response?.data?.message,
             });
         });
 };

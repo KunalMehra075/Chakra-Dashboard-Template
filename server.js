@@ -20,10 +20,10 @@ app.use("/api/test", TestRouter)
 
 app.get("/api", (req, res) => {
   try {
-    res.status(200).send({ msg: "Welcome to User App" });
+    res.status(200).send({ message: "Welcome to User App" });
   } catch (err) {
     console.log(err);
-    res.status(500).send({ msg: err.message || "Something Went Wrong" })
+    res.status(500).send({ message: err.message || "Something Went Wrong" })
   }
 });
 //? HTML Request

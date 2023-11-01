@@ -41,9 +41,10 @@ import PaginationBox from "../Extra/Pagination";
 import ReusableSearchBar from "../Extra/CommonSearchBar";
 import ReusableSelectBar from "../Extra/CommonSelectFilter";
 import ReusableDateFilter from "../Extra/CommonDateFilter";
+import ContainerBox from "../Helpers/ContainerBox";
 
 const AdminUser = () => {
-  const user = JSON.parse(localStorage.getItem("user_detail_userapp"));
+  const user = JSON.parse(localStorage.getItem("Userdata_tempapp"));
 
   const dispatch = useDispatch();
   const toast = useToast();
@@ -119,13 +120,7 @@ const AdminUser = () => {
   }, [page]);
 
   return (
-    <Container
-      maxW="container"
-      borderRadius="5px"
-      minH={"610px"}
-      padding={"20px"}
-      backgroundColor={"white"}
-    >
+    <ContainerBox>
       <Flex justifyContent={"space-between"} alignItems={"center"}>
         <Text
           mb="2"
@@ -387,42 +382,7 @@ const AdminUser = () => {
         />
       )}
       {/**<!--*------- <Alerts> ----------->*/}
-      <AlertDialog
-        isCentered
-        motionPreset="slideInBottom"
-        isOpen={isOpen}
-        leastDestructiveRef={cancelRef}
-        onClose={onClose}
-      >
-        <AlertDialogOverlay>
-          <AlertDialogContent>
-            <AlertDialogHeader fontSize="lg" fontWeight="bold">
-              Delete User
-            </AlertDialogHeader>
 
-            <AlertDialogBody>
-              Are you sure? This action will delete a this User and cannot be
-              undone.
-            </AlertDialogBody>
-
-            <AlertDialogFooter>
-              <Button ref={cancelRef} onClick={onClose}>
-                Cancel
-              </Button>
-              <Button
-                colorScheme="red"
-                onClick={() => {
-                  HandleDeleteUser(deleteID);
-                  onClose();
-                }}
-                ml={3}
-              >
-                Delete
-              </Button>
-            </AlertDialogFooter>
-          </AlertDialogContent>
-        </AlertDialogOverlay>
-      </AlertDialog>
       {/**<!--*------- <Update Status popup> ----------->*/}
 
       <AlertDialog
@@ -519,7 +479,7 @@ const AdminUser = () => {
           </AlertDialogContent>
         </AlertDialogOverlay>
       </AlertDialog>
-    </Container>
+    </ContainerBox>
   );
 };
 const cellStyle = {

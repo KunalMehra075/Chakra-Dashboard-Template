@@ -1,5 +1,4 @@
 import {
-  Container,
   Button,
   Text,
   Flex,
@@ -14,11 +13,10 @@ import {
   FormControl,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import { FiBookmark, FiSettings } from "react-icons/fi";
-import { BiX } from "react-icons/bi";
-import { useDispatch, useSelector } from "react-redux";
+import { FiSettings } from "react-icons/fi";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getUsers } from "../../Redux/App/Action/User.action";
+import ContainerBox from "../Helpers/ContainerBox";
 
 const AdminWebsite = () => {
   const navigate = useNavigate();
@@ -42,13 +40,7 @@ const AdminWebsite = () => {
   }, []);
 
   return (
-    <Container
-      maxW="container"
-      borderRadius="5px"
-      minH={"610px"}
-      padding={"20px"}
-      backgroundColor={"white"}
-    >
+    <ContainerBox>
       <Flex justifyContent={"space-between"} alignItems={"center"}>
         <Text
           mb="2"
@@ -147,20 +139,8 @@ const AdminWebsite = () => {
           </AlertDialogContent>
         </AlertDialogOverlay>
       </AlertDialog>
-    </Container>
+    </ContainerBox>
   );
-};
-const cellStyle = {
-  padding: "8px 8px",
-  textAlign: "center",
-  borderRight: "1px solid #ddd !important",
-  borderLeft: "1px solid #ddd !important",
-};
-const headCellStyle = {
-  borderLeft: "1px solid #ddd !important",
-  padding: "8px 4px",
-  textAlign: "center",
-  color: "black",
 };
 
 export default AdminWebsite;

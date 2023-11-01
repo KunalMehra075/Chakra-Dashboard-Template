@@ -18,7 +18,7 @@ export const getUsers = (page, setAllUsers) => (dispatch) => {
             console.log(err);
             dispatch({
                 type: UserTypes.USER_GET_ERROR,
-                payload: err?.response?.data?.msg,
+                payload: err?.response?.data?.message || "Something went wrong",
             });
         });
 };
@@ -40,7 +40,7 @@ export const getUserByID = (id, setMarkUser, setMarkStudents) => (dispatch) => {
 
             dispatch({
                 type: UserTypes.USER_GET_BY_ID_ERROR,
-                payload: err?.response?.data?.msg,
+                payload: err?.response?.data?.message || "Something went wrong",
             });
         });
 };
@@ -63,14 +63,14 @@ export const postUser = (data, navigate, toast) => (dispatch) => {
         .catch((err) => {
             console.log(err);
             toast({
-                title: err?.response?.data?.msg || "Something Went wrong",
+                title: err?.response?.data?.message || "Something Went wrong",
                 status: "error",
                 duration: 4000,
                 position: "top"
             });
             dispatch({
                 type: UserTypes.USER_POST_ERROR,
-                payload: err?.response?.data?.msg,
+                payload: err?.response?.data?.message || "Something went wrong",
             });
         });
 };
@@ -92,14 +92,14 @@ export const ApproveUser = (id, data, toast, navigate, getData) => (dispatch) =>
         .catch((err) => {
             console.log(err);
             toast({
-                title: err?.response?.data?.msg || "Something Went wrong",
+                title: err?.response?.data?.message || "Something Went wrong",
                 status: "error",
                 duration: 4000,
                 position: "top"
             });
             dispatch({
                 type: UserTypes.USER_UPDATE_ERROR,
-                payload: err?.response?.data?.msg,
+                payload: err?.response?.data?.message || "Something went wrong",
             });
         });
 };
@@ -127,14 +127,14 @@ export const DeleteUserByID = (id, toast, getData) => (dispatch) => {
         .catch((err) => {
             console.log(err);
             toast({
-                title: err?.response?.data?.msg || "Something Went wrong",
+                title: err?.response?.data?.message || "Something Went wrong",
                 status: "error",
                 duration: 4000,
                 position: "top"
             });
             dispatch({
                 type: UserTypes.USER_UPDATE_ERROR,
-                payload: err?.response?.data?.msg,
+                payload: err?.response?.data?.message || "Something went wrong",
             });
         });
 };
@@ -158,14 +158,14 @@ export const UpdateUser = (id, data, getData, toast) => (dispatch) => {
         .catch((err) => {
             console.log(err);
             toast({
-                title: err?.response?.data?.msg || "Something Went wrong",
+                title: err?.response?.data?.message || "Something Went wrong",
                 status: "error",
                 duration: 4000,
                 position: "top"
             });
             dispatch({
                 type: UserTypes.USER_UPDATE_ERROR,
-                payload: err?.response?.data?.msg,
+                payload: err?.response?.data?.message || "Something went wrong",
             });
         });
 };
@@ -183,20 +183,20 @@ export const UpdateUserProfile = (id, data, toast, navigate) => (dispatch) => {
                 isClosable: true,
             });
             let newuser = res?.data?.UpdatedUser
-            localStorage.setItem("user_detail_userapp", JSON.stringify(newuser));
+            localStorage.setItem("Userdata_tempapp", JSON.stringify(newuser));
             navigate("/user/dashboard")
         })
         .catch((err) => {
             console.log(err);
             toast({
-                title: err?.response?.data?.msg || "Something Went wrong",
+                title: err?.response?.data?.message || "Something Went wrong",
                 status: "error",
                 duration: 4000,
                 position: "top"
             });
             dispatch({
                 type: UserTypes.USER_UPDATE_ERROR,
-                payload: err?.response?.data?.msg,
+                payload: err?.response?.data?.message || "Something went wrong",
             });
         });
 };
@@ -217,14 +217,14 @@ export const SendUserEmail = (data, toast) => (dispatch) => {
         .catch((err) => {
             console.log(err);
             toast({
-                title: err?.response?.data?.msg || "Something Went wrong",
+                title: err?.response?.data?.message || "Something Went wrong",
                 status: "error",
                 duration: 4000,
                 position: "top"
             });
             dispatch({
                 type: UserTypes.USER_SEND_ERROR,
-                payload: err?.response?.data?.msg,
+                payload: err?.response?.data?.message || "Something went wrong",
             });
         });
 };
@@ -247,14 +247,14 @@ export const ChangeUserPassword = (data, getData, toast) => (dispatch) => {
         .catch((err) => {
             console.log(err);
             toast({
-                title: err?.response?.data?.msg || "Something Went wrong",
+                title: err?.response?.data?.message || "Something Went wrong",
                 status: "error",
                 duration: 4000,
                 position: "top"
             });
             dispatch({
                 type: UserTypes.USER_UPDATE_ERROR,
-                payload: err?.response?.data?.msg,
+                payload: err?.response?.data?.message || "Something went wrong",
             });
         });
 };

@@ -1,14 +1,15 @@
 import { Routes, Route } from "react-router-dom";
 import Login from "../Pages/Login";
 import UserLogin from "../Pages/UserLogin";
-import UserDashboard from "../Pages/UserDashboard";
-import AdminDashboard from "../Pages/AdminDashboard";
-import PrivateAdminRoute from "./PrivateAdmin";
-import PrivateUserRoute from "./PrivateUser";
+
+import PrivateAdminRoute from "../Components/Helpers/PrivateAdmin";
+import PrivateUserRoute from "../Components/Helpers/PrivateUser";
 import WebsiteLayout from "../Components/WebsiteComponents/WebsiteLayout";
 import Homepage from "../Pages/Homepage";
 
 import ForgotPassword from "../Components/Extra/ForgotPassword";
+import MainAdminDashboard from "../Components/AdminComponents/MainAdminDashboard";
+import MainUserDashboard from "../Components/UserComponents/MainUserDashboard";
 
 const AllRoutes = () => {
   return (
@@ -22,7 +23,7 @@ const AllRoutes = () => {
         path="/admin/*"
         element={
           <PrivateAdminRoute>
-            <AdminDashboard />
+            <MainAdminDashboard />
           </PrivateAdminRoute>
         }
       />
@@ -31,7 +32,7 @@ const AllRoutes = () => {
         path="/user/*"
         element={
           <PrivateUserRoute>
-            <UserDashboard />
+            <MainUserDashboard />
           </PrivateUserRoute>
         }
       />
